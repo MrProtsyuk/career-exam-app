@@ -6,9 +6,8 @@ export default function Home({ onTakeExam, onViewCareers }) {
           Career <em>Discovery</em>
         </h1>
         <p className="home-lede">
-          Learn more about different career paths, or take a short test that
-          matches your characteristics against every one of them with
-          statistics.
+          Browse the career paths on your own, or take a short test that
+          measures your traits and ranks every career by how well it fits.
         </p>
       </div>
 
