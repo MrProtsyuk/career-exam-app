@@ -7,7 +7,9 @@ export default function Home({ onTakeExam, onViewCareers }) {
         </h1>
         <p className="home-lede">
           Browse the career paths on your own, or take a short test that
-          measures your traits and ranks every career by how well it fits.
+          measures your traits and <b>correlates them against every career in
+          the database</b>. The result is arithmetic you can check, not a
+          guess.
         </p>
       </div>
 
