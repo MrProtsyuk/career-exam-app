@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   Radar,
   RadarChart,
@@ -35,6 +35,59 @@ function AxisBar({ dim, value }) {
       >
         <span className="axis-dot" style={{ left: `${pct}%` }} />
       </div>
+    </div>
+  );
+}
+
+const prefersReducedMotion = () =>
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// The headline score animates up on mount; reduced motion gets the final
+// value immediately rather than a frozen zero.
+function useCountUp(target, duration = 850) {
+  const [value, setValue] = useState(() =>
+    prefersReducedMotion() ? target : 0
+  );
+
+  useEffect(() => {
+    if (prefersReducedMotion()) {
+      setValue(target);
+      return undefined;
+    }
+    let frame;
+    const start = performance.now();
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      setValue(Math.round(target * (1 - Math.pow(1 - t, 3))));
+      if (t < 1) frame = requestAnimationFrame(step);
+    };
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, [target, duration]);
+
+  return value;
+}
+
+// The score, drawn the way this instrument records an answer: ten bubbles,
+// filled to the percentage. 92% reads as nine filled and one a fifth full.
+function ScoreBubbles({ pct }) {
+  const full = Math.floor(pct / 10);
+  const remainder = pct % 10;
+  return (
+    <div className="bubbles" aria-hidden="true">
+      {Array.from({ length: 10 }, (_, i) => {
+        if (i < full) return <span className="bubble on" key={i} />;
+        if (i === full && remainder > 0) {
+          return (
+            <span
+              className="bubble part"
+              key={i}
+              style={{ '--fill': `${remainder * 10}%` }}
+            />
+          );
+        }
+        return <span className="bubble" key={i} />;
+      })}
     </div>
   );
 }
@@ -102,8 +155,8 @@ export default function Results({ questions, careers, answers, onRetake }) {
     })
   );
   const axes = DIMENSIONS.filter((d) => d.group === 'axis');
-  const top = ranked.slice(0, TOP_N);
-  const rest = ranked.slice(TOP_N);
+  const [best, ...alsoStrong] = ranked.slice(0, TOP_N);
+  const heroPct = useCountUp(best.matchPct);
 
   const download = () => {
     const text = buildReportText(userVec, ranked, questions.length);
@@ -136,25 +189,65 @@ export default function Results({ questions, careers, answers, onRetake }) {
         </div>
       </div>
 
+      <section className="hero-match" aria-label="Strongest match">
+        <p className="hero-eyebrow">
+          <span>Strongest match</span>
+          <span>1 of {ranked.length} careers</span>
+        </p>
+
+        <div className="hero-score">
+          <span className="hero-num">
+            {heroPct}
+            <sup>%</sup>
+          </span>
+          <ScoreBubbles pct={best.matchPct} />
+          <span className="hero-scale">Profile correlation</span>
+        </div>
+
+        <div className="hero-body">
+          <h2>{best.career.name}</h2>
+          <p>{best.career.description}</p>
+          <div className="hero-drivers">
+            {best.drivers.map((k) => (
+              <span className="driver" key={k} title={DIMENSION_BY_KEY[k].blurb}>
+                {DIMENSION_BY_KEY[k].label}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="hero-meta">
+          <span>
+            <b>Titles</b>
+            {best.career.titles.join(' · ')}
+          </span>
+          <span>
+            <b>Path</b>
+            {best.career.education}
+          </span>
+        </div>
+      </section>
+
       <section aria-label="Trait profile">
         <h2 className="section-label">Trait profile</h2>
         <div className="profile-grid">
           <div className="radar-card">
-            <ResponsiveContainer width="100%" height={340}>
-              <RadarChart data={radarData} outerRadius="72%">
+            <ResponsiveContainer width="100%" height={360}>
+              <RadarChart data={radarData} outerRadius="70%">
                 <PolarGrid stroke={GRID_GREEN} />
                 <PolarAngleAxis
                   dataKey="trait"
-                  tick={{ fill: PENCIL, fontSize: 12.5, fontFamily: 'inherit' }}
+                  tick={{ fill: PENCIL, fontSize: 11, fontFamily: 'inherit' }}
                 />
                 <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
                 <Radar
                   dataKey="score"
                   stroke={FORM_GREEN}
-                  strokeWidth={2}
+                  strokeWidth={2.5}
                   fill={FORM_GREEN}
-                  fillOpacity={0.22}
-                  isAnimationActive={!window.matchMedia('(prefers-reduced-motion: reduce)').matches}
+                  fillOpacity={0.26}
+                  dot={{ r: 4, fill: FORM_GREEN, strokeWidth: 0 }}
+                  isAnimationActive={!prefersReducedMotion()}
                 />
               </RadarChart>
             </ResponsiveContainer>
@@ -169,21 +262,23 @@ export default function Results({ questions, careers, answers, onRetake }) {
 
       <section aria-label="Top matches">
         <h2 className="section-label">
-          Top {top.length} of {ranked.length} careers
+          Also strong — 2 to {alsoStrong.length + 1} of {ranked.length}
         </h2>
         <div className="matches">
-          {top.map((r, i) => (
+          {alsoStrong.map((r, i) => (
             <article
               className="match"
               key={r.career.id}
-              style={{ animationDelay: `${i * 90}ms` }}
+              style={{ animationDelay: `${i * 65}ms` }}
             >
               <div className="match-pct">
                 <span className="match-rank">
-                  {String(i + 1).padStart(2, '0')}
+                  {String(i + 2).padStart(2, '0')}
                 </span>
-                {r.matchPct}
-                <small>%</small>
+                <span className="match-num">
+                  {r.matchPct}
+                  <sup>%</sup>
+                </span>
               </div>
               <div className="match-body">
                 <h3>{r.career.name}</h3>
