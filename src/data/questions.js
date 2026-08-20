@@ -15,7 +15,7 @@ export const CATEGORIES = [
 ];
 
 export const QUESTION_BANK = [
-  // --------------------------------------------------------- academic (22)
+  // --------------------------------------------------------- academic (30)
   {
     id: 'a1',
     category: 'academic',
@@ -279,8 +279,102 @@ export const QUESTION_BANK = [
       { label: 'A courtroom or a trading floor — somewhere with stakes', weights: { E: 2, risk: 1 } },
     ],
   },
+  {
+    id: 'a23',
+    category: 'academic',
+    text: 'You get to make one course required for everyone. Which?',
+    options: [
+      { label: 'Statistics — the whole world runs on it', weights: { I: 2, C: 1, technical: 2 } },
+      { label: 'Personal finance — nobody teaches this and it shows', weights: { C: 2, E: 1 } },
+      { label: 'Public speaking — everyone needs it, everyone dreads it', weights: { E: 2, people: 2 } },
+      { label: 'Ethics — sit with the hard questions for a semester', weights: { I: 1, S: 2, people: 1 } },
+      { label: 'Basic repair — change a tire, fix a leak, wire a plug', weights: { R: 2, technical: 1 } },
+    ],
+  },
+  {
+    id: 'a24',
+    category: 'academic',
+    text: 'Which textbook would you actually keep after the semester?',
+    options: [
+      { label: 'The thick reference I know I would look things up in', weights: { C: 2, technical: 1 } },
+      { label: 'The one that was all case studies about people', weights: { S: 2, people: 2 } },
+      { label: 'The art book, obviously', weights: { A: 2, technical: -2 } },
+      { label: 'The problem set book with the brutal ones in the back', weights: { I: 2, technical: 2 } },
+      { label: 'The one about how companies actually got built', weights: { E: 2, risk: 1 } },
+    ],
+  },
+  {
+    id: 'a25',
+    category: 'academic',
+    text: 'You have to teach a class tomorrow. What is it?',
+    options: [
+      { label: 'Something hands-on where they build a real thing', weights: { R: 2, technical: 1 } },
+      { label: 'A discussion seminar — I just steer', weights: { S: 2, people: 2 } },
+      { label: 'A workshop where everyone makes something of their own', weights: { A: 2 } },
+      { label: 'A lecture I have researched into the ground', weights: { I: 2, C: 1 } },
+      { label: 'A pitch competition, winner takes all', weights: { E: 2, risk: 1 } },
+    ],
+  },
+  {
+    id: 'a26',
+    category: 'academic',
+    text: 'Which research question would keep you up at night?',
+    options: [
+      { label: 'How does this system actually work under the hood', weights: { I: 2, technical: 2 } },
+      { label: 'Why do people act like that in groups', weights: { I: 1, S: 2, people: 2 } },
+      { label: 'What makes a thing beautiful instead of just fine', weights: { A: 2, technical: -2 } },
+      { label: 'Could this be built cheaper and faster', weights: { R: 1, E: 2 } },
+      { label: 'What is in this data that nobody has noticed yet', weights: { I: 2, C: 2 } },
+    ],
+  },
+  {
+    id: 'a27',
+    category: 'academic',
+    text: 'A study group forms. You…',
+    options: [
+      { label: 'Skip it — I work better on my own', weights: { autonomy: 2, people: -2 } },
+      { label: 'Run it, because someone has to', weights: { E: 2, people: 1 } },
+      { label: 'Join it for the arguing, mostly', weights: { S: 2, people: 2 } },
+      { label: 'Build the shared notes doc everyone ends up living in', weights: { C: 2, S: 1 } },
+      { label: 'Turn up with the hard problems already done', weights: { I: 2, autonomy: 1 } },
+    ],
+  },
+  {
+    id: 'a28',
+    category: 'academic',
+    text: 'Grades stop existing tomorrow. Your studying…',
+    options: [
+      { label: 'Barely changes — I study what interests me anyway', weights: { I: 2, autonomy: 2 } },
+      { label: 'Gets a lot more experimental', weights: { A: 2, risk: 1, autonomy: 1 } },
+      { label: 'Falls apart, honestly. I need the structure', weights: { C: 2, autonomy: -2 } },
+      { label: 'Shifts to whatever actually gets me hired', weights: { E: 2, C: 1 } },
+    ],
+  },
+  {
+    id: 'a29',
+    category: 'academic',
+    text: 'Pick the skill you wish you had already mastered.',
+    options: [
+      { label: 'Real fluency in another language', weights: { A: 1, S: 1, people: 2 } },
+      { label: 'Writing code that does whatever I imagine', weights: { I: 2, technical: 2 } },
+      { label: 'Building or fixing anything with my hands', weights: { R: 2, technical: 1 } },
+      { label: 'Drawing what I can see in my head', weights: { A: 2, technical: -2 } },
+      { label: 'Reading a room the second I walk in', weights: { E: 2, people: 2 } },
+    ],
+  },
+  {
+    id: 'a30',
+    category: 'academic',
+    text: 'Open book or closed book?',
+    options: [
+      { label: 'Open book — the point is using the material', weights: { I: 1, autonomy: 2 } },
+      { label: 'Closed book — I like knowing that I know it', weights: { C: 2, autonomy: -1 } },
+      { label: 'Neither. Give me a project and leave me alone', weights: { A: 2, autonomy: 2 } },
+      { label: 'Group exam. We would take it apart together', weights: { S: 2, people: 2 } },
+    ],
+  },
 
-  // ----------------------------------------------------------- values (20)
+  // ----------------------------------------------------------- values (30)
   {
     id: 'v1',
     category: 'values',
@@ -521,8 +615,122 @@ export const QUESTION_BANK = [
       { label: '“Opportunity”', weights: { E: 2, risk: 1 } },
     ],
   },
+  {
+    id: 'v21',
+    category: 'values',
+    text: 'Double the pay, but every call goes through a committee. You…',
+    options: [
+      { label: 'Pass. Running my own decisions is the whole point', weights: { autonomy: 2, risk: 1 } },
+      { label: 'Take it — the money buys freedom somewhere else', weights: { E: 2, C: 1, autonomy: -1 } },
+      { label: 'Negotiate for one area that is fully mine', weights: { E: 2, autonomy: 1 } },
+      { label: 'Take it, as long as the committee knows its stuff', weights: { C: 2, autonomy: -2 } },
+    ],
+  },
+  {
+    id: 'v22',
+    category: 'values',
+    text: 'Which failure would you rather explain later?',
+    options: [
+      { label: 'I bet big and it did not come off', weights: { E: 2, risk: 2 } },
+      { label: 'I played it safe and stayed a few years too long', weights: { C: 1, risk: -2 } },
+      { label: 'I made something almost nobody understood', weights: { A: 2, risk: 1 } },
+      { label: 'I kept helping someone who did not want it', weights: { S: 2, people: 2 } },
+    ],
+  },
+  {
+    id: 'v23',
+    category: 'values',
+    text: 'What would you want a stranger to notice about your work?',
+    options: [
+      { label: 'That it was rigorous', weights: { I: 2, C: 1, technical: 1 } },
+      { label: 'That it was original', weights: { A: 2 } },
+      { label: 'That it helped somebody', weights: { S: 2, people: 2 } },
+      { label: 'That it was built to last', weights: { R: 2, C: 1 } },
+      { label: 'That it was bold', weights: { E: 2, risk: 2 } },
+    ],
+  },
+  {
+    id: 'v24',
+    category: 'values',
+    text: 'Your job goes fully remote and nobody checks in. You feel…',
+    options: [
+      { label: 'Free. Finally', weights: { autonomy: 2, people: -2 } },
+      { label: 'Adrift — I want the scaffolding back', weights: { C: 2, autonomy: -2 } },
+      { label: 'Fine, but I miss having people around', weights: { S: 1, people: 2 } },
+      { label: 'Good, until I need a room to pitch in', weights: { E: 2, people: 1 } },
+    ],
+  },
+  {
+    id: 'v25',
+    category: 'values',
+    text: 'Pick the legacy.',
+    options: [
+      { label: 'A tool people still reach for', weights: { R: 2, technical: 2 } },
+      { label: 'An idea people still argue about', weights: { I: 2, A: 1 } },
+      { label: 'People I trained who went further than I did', weights: { S: 2, people: 2 } },
+      { label: 'A company that outlasted me', weights: { E: 2, risk: 1 } },
+      { label: 'A body of work with my fingerprints all over it', weights: { A: 2, autonomy: 1 } },
+    ],
+  },
+  {
+    id: 'v26',
+    category: 'values',
+    text: 'Stability versus upside, concretely.',
+    options: [
+      { label: 'Salary. Every time', weights: { C: 2, risk: -2 } },
+      { label: 'Less salary, real equity', weights: { E: 2, risk: 2 } },
+      { label: 'Contract work — I set the terms', weights: { autonomy: 2, risk: 1 } },
+      { label: 'Whatever leaves my evenings alone', weights: { C: 1, risk: -1, autonomy: 1 } },
+    ],
+  },
+  {
+    id: 'v27',
+    category: 'values',
+    text: 'How much should work know about your life?',
+    options: [
+      { label: 'Close to nothing. I keep the two apart', weights: { people: -2, autonomy: 1 } },
+      { label: 'Enough that they treat me like a person', weights: { S: 2, people: 2 } },
+      { label: 'They are some of my closest friends', weights: { S: 1, E: 1, people: 2 } },
+      { label: 'Depends entirely on the manager', weights: { C: 1, people: 1 } },
+    ],
+  },
+  {
+    id: 'v28',
+    category: 'values',
+    text: 'A cause you would give a full year to.',
+    options: [
+      { label: 'Getting people housed and fed', weights: { S: 2, people: 2 } },
+      { label: 'Building infrastructure that actually works', weights: { R: 2, technical: 2 } },
+      { label: 'Making the research public and correct', weights: { I: 2, C: 1 } },
+      { label: 'Funding people with unreasonable ideas', weights: { E: 2, risk: 2 } },
+      { label: 'Keeping something beautiful from being lost', weights: { A: 2 } },
+    ],
+  },
+  {
+    id: 'v29',
+    category: 'values',
+    text: 'The word “professional” makes you picture…',
+    options: [
+      { label: 'Reliable, prepared, on time', weights: { C: 2, autonomy: -1 } },
+      { label: 'Someone who genuinely knows the craft', weights: { I: 1, R: 1, technical: 2 } },
+      { label: 'Someone who reads the room perfectly', weights: { E: 2, people: 2 } },
+      { label: 'A costume I would rather not put on', weights: { A: 2, C: -1, autonomy: 2 } },
+    ],
+  },
+  {
+    id: 'v30',
+    category: 'values',
+    text: 'Ten years in, what tells you that you chose right?',
+    options: [
+      { label: 'I am genuinely good at something difficult', weights: { I: 1, R: 1, technical: 2 } },
+      { label: 'I control my own time', weights: { autonomy: 2 } },
+      { label: 'The people I work with would follow me anywhere', weights: { E: 2, S: 1, people: 2 } },
+      { label: 'The work still surprises me', weights: { I: 1, A: 2 } },
+      { label: 'I am secure and nothing keeps me up at night', weights: { C: 2, risk: -2 } },
+    ],
+  },
 
-  // ---------------------------------------------------------- hobbies (20)
+  // ---------------------------------------------------------- hobbies (30)
   {
     id: 'h1',
     category: 'hobbies',
@@ -763,8 +971,125 @@ export const QUESTION_BANK = [
       { label: 'The famous market. I’ll make friends and haggle', weights: { E: 2, people: 1, risk: 1 } },
     ],
   },
+  {
+    id: 'h21',
+    category: 'hobbies',
+    text: 'Something in the house breaks. First instinct?',
+    options: [
+      { label: 'Open it up. I want to see what went wrong', weights: { R: 2, technical: 2 } },
+      { label: 'Search until I find the exact fix', weights: { I: 2, C: 1 } },
+      { label: 'Call someone who does this properly', weights: { C: 1, people: 1, technical: -2 } },
+      { label: 'Improvise something that technically holds', weights: { R: 1, A: 2, risk: 1 } },
+    ],
+  },
+  {
+    id: 'h22',
+    category: 'hobbies',
+    text: 'A side project with no deadline and no audience.',
+    options: [
+      { label: 'Automate something that annoys me daily', weights: { I: 2, technical: 2, autonomy: 1 } },
+      { label: 'Build furniture', weights: { R: 2, technical: 1 } },
+      { label: 'Write the thing I keep circling back to', weights: { A: 2, autonomy: 2 } },
+      { label: 'Start a regular event for my friends', weights: { E: 2, people: 2 } },
+      { label: 'Learn one cuisine properly, start to finish', weights: { R: 1, C: 2 } },
+    ],
+  },
+  {
+    id: 'h23',
+    category: 'hobbies',
+    text: 'A weekend somewhere with no signal.',
+    options: [
+      { label: 'Bliss', weights: { autonomy: 2, people: -2 } },
+      { label: 'Fine, as long as there are people there', weights: { S: 2, people: 2 } },
+      { label: 'I would bring three books and finish two', weights: { I: 2 } },
+      { label: 'I would find something to build or fix by hour two', weights: { R: 2, technical: 1 } },
+      { label: 'Mild panic, then relief', weights: { people: 1, risk: -1 } },
+    ],
+  },
+  {
+    id: 'h24',
+    category: 'hobbies',
+    text: 'Your saved links are mostly…',
+    options: [
+      { label: 'Documentation and how-tos', weights: { I: 2, C: 1, technical: 2 } },
+      { label: 'Recipes and projects to try', weights: { R: 2 } },
+      { label: 'Design and photography I want to steal from', weights: { A: 2, technical: -2 } },
+      { label: 'Long reads about people', weights: { I: 1, S: 1, people: 2 } },
+      { label: 'Markets, deals, and who bought whom', weights: { E: 2, C: 1 } },
+    ],
+  },
+  {
+    id: 'h25',
+    category: 'hobbies',
+    text: 'Team sport or solo sport?',
+    options: [
+      { label: 'Team. The people are the point', weights: { S: 2, people: 2 } },
+      { label: 'Solo. It is me against me', weights: { autonomy: 2, people: -2 } },
+      { label: 'Either, as long as I can win it', weights: { E: 2, risk: 1 } },
+      { label: 'Neither. I move around to think', weights: { A: 1, autonomy: 1 } },
+    ],
+  },
+  {
+    id: 'h26',
+    category: 'hobbies',
+    text: 'You inherit a garage packed with tools.',
+    options: [
+      { label: 'Best day of my life', weights: { R: 2, technical: 2 } },
+      { label: 'Sell it off, carefully and profitably', weights: { E: 2, C: 1 } },
+      { label: 'Clear it out and make it a studio', weights: { A: 2 } },
+      { label: 'Catalogue every last thing first', weights: { C: 2, technical: 1 } },
+    ],
+  },
+  {
+    id: 'h27',
+    category: 'hobbies',
+    text: 'Long flight. Pick your puzzle.',
+    options: [
+      { label: 'The crossword', weights: { A: 1, I: 1, C: 1 } },
+      { label: 'Sudoku or a logic grid', weights: { C: 2, technical: 2 } },
+      { label: 'Nothing — I would talk to whoever is next to me', weights: { E: 2, people: 2 } },
+      { label: 'A strategy game against the machine', weights: { I: 2, technical: 1 } },
+      { label: 'Sketching out the window', weights: { A: 2, technical: -2 } },
+    ],
+  },
+  {
+    id: 'h28',
+    category: 'hobbies',
+    text: 'Music, honestly.',
+    options: [
+      { label: 'I play something', weights: { R: 1, A: 2 } },
+      { label: 'I make playlists like it is a craft', weights: { A: 1, C: 2 } },
+      { label: 'Background noise while I work', weights: { I: 1, C: 1 } },
+      { label: 'Live shows, crowds, the whole business', weights: { E: 2, people: 2 } },
+      { label: 'I have strong opinions about audio gear', weights: { R: 1, technical: 2 } },
+    ],
+  },
+  {
+    id: 'h29',
+    category: 'hobbies',
+    text: 'A friend asks you to help plan their wedding.',
+    options: [
+      { label: 'Spreadsheet, timeline, vendor list. Done', weights: { C: 2, technical: 1 } },
+      { label: 'I will handle the people and the toasts', weights: { E: 2, S: 1, people: 2 } },
+      { label: 'I will do the invitations and the whole look', weights: { A: 2 } },
+      { label: 'Tell me what to carry and when', weights: { R: 2, people: 1 } },
+      { label: 'I would rather send an excellent gift', weights: { people: -2, autonomy: 1 } },
+    ],
+  },
+  {
+    id: 'h30',
+    category: 'hobbies',
+    text: 'How do you pick up a brand new hobby?',
+    options: [
+      { label: 'Buy the gear and flail until it works', weights: { R: 2, risk: 2 } },
+      { label: 'Read everything about it first', weights: { I: 2, C: 1 } },
+      { label: 'Take a class full of other beginners', weights: { S: 2, people: 2 } },
+      { label: 'Find one person who is great and copy them', weights: { E: 1, C: 1, people: 1 } },
+      { label: 'Work out my own way of doing it', weights: { A: 2, autonomy: 2 } },
+    ],
+  },
 
-  // ------------------------------------------------------ personality (19)
+  // ------------------------------------------------------ personality (30)
   {
     id: 'p1',
     category: 'personality',
@@ -993,8 +1318,131 @@ export const QUESTION_BANK = [
       { label: 'Fast and blunt. I’m busy', weights: { E: 2, risk: 1 } },
     ],
   },
+  {
+    id: 'p20',
+    category: 'personality',
+    text: 'Nobody tells you what to do for a month. You…',
+    options: [
+      { label: 'Thrive. The list was already written', weights: { I: 1, autonomy: 2 } },
+      { label: 'Drift for two weeks, then panic', weights: { C: 1, autonomy: -2 } },
+      { label: 'Start three things and finish one', weights: { A: 2, risk: 1 } },
+      { label: 'Go and find people to work with', weights: { S: 2, people: 2 } },
+    ],
+  },
+  {
+    id: 'p21',
+    category: 'personality',
+    text: 'An unfamiliar machine in front of you. Instinct?',
+    options: [
+      { label: 'Press things and find out', weights: { R: 2, risk: 2, technical: 1 } },
+      { label: 'Read the manual first', weights: { C: 2, technical: 1 } },
+      { label: 'Watch somebody else do it once', weights: { S: 1, people: 1 } },
+      { label: 'Ask why it was designed this way at all', weights: { I: 2, technical: 1 } },
+    ],
+  },
+  {
+    id: 'p22',
+    category: 'personality',
+    text: 'Which compliment lands hardest?',
+    options: [
+      { label: '“You worked that out fast”', weights: { I: 2, technical: 1 } },
+      { label: '“You made that feel easy”', weights: { S: 2, people: 2 } },
+      { label: '“I have never seen anything like it”', weights: { A: 2 } },
+      { label: '“You got it done”', weights: { R: 1, C: 2 } },
+      { label: '“You were right to push”', weights: { E: 2, risk: 1 } },
+    ],
+  },
+  {
+    id: 'p23',
+    category: 'personality',
+    text: 'A rule that makes no sense to you.',
+    options: [
+      { label: 'I quietly ignore it', weights: { C: -1, autonomy: 2 } },
+      { label: 'I follow it. Rules usually exist for a reason', weights: { C: 2, autonomy: -2 } },
+      { label: 'I argue it up the chain', weights: { E: 2, people: 1 } },
+      { label: 'I go find out who wrote it and why', weights: { I: 2 } },
+    ],
+  },
+  {
+    id: 'p24',
+    category: 'personality',
+    text: 'A blank page and a week to fill it.',
+    options: [
+      { label: 'Exhilarating', weights: { A: 2, autonomy: 2 } },
+      { label: 'Awful. Give me a brief', weights: { C: 2, autonomy: -2 } },
+      { label: 'I would research for four days first', weights: { I: 2 } },
+      { label: 'I would ask three people what they need', weights: { S: 2, people: 2 } },
+    ],
+  },
+  {
+    id: 'p25',
+    category: 'personality',
+    text: 'Under a real deadline you turn…',
+    options: [
+      { label: 'Calm and systematic', weights: { C: 2 } },
+      { label: 'Fast and a little reckless', weights: { E: 1, risk: 2 } },
+      { label: 'Into the one keeping everyone else steady', weights: { S: 2, people: 2 } },
+      { label: 'Quiet and completely heads-down', weights: { I: 1, autonomy: 2, people: -2 } },
+    ],
+  },
+  {
+    id: 'p26',
+    category: 'personality',
+    text: 'How much detail is too much detail?',
+    options: [
+      { label: 'No such thing', weights: { C: 2, technical: 2 } },
+      { label: 'Anything past the actual point of it', weights: { A: 1, E: 1 } },
+      { label: 'Depends who is reading', weights: { S: 1, people: 2 } },
+      { label: 'I want all of it. Others can have the summary', weights: { I: 2, technical: 1 } },
+    ],
+  },
+  {
+    id: 'p27',
+    category: 'personality',
+    text: 'Someone watching over your shoulder while you work:',
+    options: [
+      { label: 'Fine. I like an audience', weights: { E: 2, people: 2 } },
+      { label: 'Ruins it completely', weights: { autonomy: 2, people: -2 } },
+      { label: 'Depends whether they are helping', weights: { S: 1, people: 1 } },
+      { label: 'I would rather just show the finished thing', weights: { A: 2, autonomy: 1 } },
+    ],
+  },
+  {
+    id: 'p28',
+    category: 'personality',
+    text: 'Your relationship with routine:',
+    options: [
+      { label: 'It is the foundation of everything else', weights: { C: 2, risk: -2 } },
+      { label: 'It suffocates me inside a month', weights: { A: 2, risk: 2, autonomy: 2 } },
+      { label: 'I want a frame, not a cage', weights: { C: 1, autonomy: 1 } },
+      { label: 'I have never once kept one going', weights: { A: 1, risk: 1 } },
+    ],
+  },
+  {
+    id: 'p29',
+    category: 'personality',
+    text: 'A coworker has one hard truth for you. You want it…',
+    options: [
+      { label: 'Straight, right now, no cushion', weights: { E: 2, technical: 1, people: -1 } },
+      { label: 'Kindly, with some context around it', weights: { S: 2, people: 2 } },
+      { label: 'In writing, so I can sit with it', weights: { I: 1, C: 2, people: -1 } },
+      { label: 'With a plan for fixing it attached', weights: { R: 1, C: 2 } },
+    ],
+  },
+  {
+    id: 'p30',
+    category: 'personality',
+    text: 'Well and truly stuck. You…',
+    options: [
+      { label: 'Go quiet and grind at it alone', weights: { I: 1, autonomy: 2, people: -2 } },
+      { label: 'Talk it out with whoever is nearby', weights: { S: 2, people: 2 } },
+      { label: 'Do something physical until it loosens', weights: { R: 2 } },
+      { label: 'Throw it out and come at it sideways', weights: { A: 2, risk: 1 } },
+      { label: 'Break it down into a checklist', weights: { C: 2 } },
+    ],
+  },
 
-  // -------------------------------------------------------- workstyle (19)
+  // -------------------------------------------------------- workstyle (30)
   {
     id: 'w1',
     category: 'workstyle',
@@ -1221,6 +1669,130 @@ export const QUESTION_BANK = [
       { label: 'Creative stakes — my taste, on the record', weights: { A: 2, risk: 1 } },
       { label: 'Human stakes — someone’s counting on me', weights: { S: 2, people: 2 } },
       { label: 'Financial stakes — skin in the game', weights: { E: 2, risk: 2 } },
+    ],
+  },
+  {
+    id: 'w20',
+    category: 'workstyle',
+    text: 'How much of your week should be unstructured?',
+    options: [
+      { label: 'Most of it. I will structure it myself', weights: { autonomy: 2 } },
+      { label: 'Very little. Book me solid', weights: { C: 2, autonomy: -2 } },
+      { label: 'Half — mornings mine, afternoons theirs', weights: { C: 1, autonomy: 1 } },
+      { label: 'None. I want to be wherever the people are', weights: { S: 2, people: 2 } },
+    ],
+  },
+  {
+    id: 'w21',
+    category: 'workstyle',
+    text: 'The one tool you would fight to keep:',
+    options: [
+      { label: 'My editor and a terminal', weights: { I: 1, technical: 2 } },
+      { label: 'A big whiteboard', weights: { A: 1, S: 1, people: 1 } },
+      { label: 'The shared tracker where everything lives', weights: { C: 2 } },
+      { label: 'My phone. I run on calls', weights: { E: 2, people: 2 } },
+      { label: 'Actual physical tools', weights: { R: 2, technical: 1 } },
+    ],
+  },
+  {
+    id: 'w22',
+    category: 'workstyle',
+    text: 'A process everyone follows and nobody likes. You…',
+    options: [
+      { label: 'Rewrite it and propose the replacement', weights: { E: 2, C: 1, autonomy: 1 } },
+      { label: 'Follow it. Not my hill', weights: { C: 2, autonomy: -2 } },
+      { label: 'Quietly do it my own way', weights: { autonomy: 2 } },
+      { label: 'Ask the team what they would change first', weights: { S: 2, people: 2 } },
+    ],
+  },
+  {
+    id: 'w23',
+    category: 'workstyle',
+    text: 'Your ideal team size:',
+    options: [
+      { label: 'Just me', weights: { autonomy: 2, people: -2 } },
+      { label: 'Two or three, tight', weights: { S: 1, people: 1, autonomy: 1 } },
+      { label: 'Eight or ten, with real momentum', weights: { S: 2, people: 2 } },
+      { label: 'Big enough that I am running it', weights: { E: 2, people: 1 } },
+    ],
+  },
+  {
+    id: 'w24',
+    category: 'workstyle',
+    text: 'Specialist or generalist?',
+    options: [
+      { label: 'Specialist. World-class at one thing', weights: { I: 2, technical: 2 } },
+      { label: 'Generalist. I want the whole picture', weights: { A: 1, E: 1, risk: 1 } },
+      { label: 'Specialist now, generalist later', weights: { I: 1, C: 1 } },
+      { label: 'Whatever the work needs that week', weights: { R: 1, C: 1 } },
+    ],
+  },
+  {
+    id: 'w25',
+    category: 'workstyle',
+    text: 'How should your work be measured?',
+    options: [
+      { label: 'By what actually shipped', weights: { R: 2, C: 1 } },
+      { label: 'By whether the numbers moved', weights: { E: 2, C: 2 } },
+      { label: 'By whether people ended up better off', weights: { S: 2, people: 2 } },
+      { label: 'By whether it was any good', weights: { A: 2, technical: 1 } },
+      { label: 'By whether it was correct', weights: { I: 2, C: 1, technical: 2 } },
+    ],
+  },
+  {
+    id: 'w26',
+    category: 'workstyle',
+    text: 'You inherit a system nobody ever documented.',
+    options: [
+      { label: 'Read the source until I understand all of it', weights: { I: 2, technical: 2 } },
+      { label: 'Track down whoever built it and ask', weights: { S: 1, people: 2 } },
+      { label: 'Document it as I go', weights: { C: 2 } },
+      { label: 'Rebuild the part I need, my way', weights: { R: 2, risk: 1, autonomy: 2 } },
+    ],
+  },
+  {
+    id: 'w27',
+    category: 'workstyle',
+    text: 'Working hours, if it were genuinely up to you:',
+    options: [
+      { label: 'Early mornings, finished by two', weights: { C: 2, autonomy: 1 } },
+      { label: 'Late nights, alone with it', weights: { A: 1, autonomy: 2, people: -2 } },
+      { label: 'In bursts, whenever the work is hot', weights: { A: 1, risk: 2, autonomy: 2 } },
+      { label: 'Same hours as everyone else. Easier to coordinate', weights: { C: 2, people: 1, autonomy: -2 } },
+    ],
+  },
+  {
+    id: 'w28',
+    category: 'workstyle',
+    text: 'A client wants something you think is wrong.',
+    options: [
+      { label: 'Say so plainly, then build it their way', weights: { C: 1, people: 1 } },
+      { label: 'Refuse. My name is on this', weights: { A: 1, risk: 2, autonomy: 2 } },
+      { label: 'Show them data until they move', weights: { I: 2, technical: 1 } },
+      { label: 'Find the version we can both live with', weights: { E: 1, S: 2, people: 2 } },
+    ],
+  },
+  {
+    id: 'w29',
+    category: 'workstyle',
+    text: 'First week at a new place. You…',
+    options: [
+      { label: 'Read every document there is', weights: { I: 2, C: 2 } },
+      { label: 'Get lunch with everyone', weights: { E: 2, S: 1, people: 2 } },
+      { label: 'Ship something small on day three', weights: { R: 2, risk: 2 } },
+      { label: 'Work out how the place really operates', weights: { I: 1, E: 1, C: 1 } },
+    ],
+  },
+  {
+    id: 'w30',
+    category: 'workstyle',
+    text: 'What would actually make you leave a job you like?',
+    options: [
+      { label: 'Losing control of my own time', weights: { autonomy: 2 } },
+      { label: 'The work stopped being hard', weights: { I: 2, technical: 1 } },
+      { label: 'The people changed', weights: { S: 2, people: 2 } },
+      { label: 'A better offer with more upside', weights: { E: 2, risk: 2 } },
+      { label: 'Constant instability', weights: { C: 2, risk: -2 } },
     ],
   },
 ];

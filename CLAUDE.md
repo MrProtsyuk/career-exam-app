@@ -1,8 +1,8 @@
 # CLAUDE.md
 
-## Project: Career Discovery (Form CD-36)
+## Project: Career Discovery
 
-Client-side React app. A 36-item form sampled from a 100-question bank builds a
+Client-side React app. A 50-item form sampled from a 150-question bank builds a
 10-trait profile and ranks 63 careers by Pearson profile correlation. No backend,
 no network calls, no localStorage. State is in-memory only, by design.
 
