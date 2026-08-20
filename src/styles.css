@@ -85,6 +85,85 @@ a:focus-visible {
   font-weight: 600;
 }
 
+.masthead-home {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.masthead-home:hover strong {
+  color: var(--ink);
+}
+
+.masthead-tab {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: var(--pencil);
+  transition: color 120ms ease;
+}
+
+.masthead-tab:hover {
+  color: var(--ink);
+}
+
+/* ------------------------------------------------------------------- home */
+.home-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 640px) {
+  .home-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 8px;
+  padding: 24px 26px 26px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--paper-raised);
+  transition: border-color 120ms ease, background-color 120ms ease,
+    transform 120ms ease;
+}
+
+.home-card:hover {
+  border-color: var(--form);
+  background: var(--form-tint);
+}
+
+.home-card:active {
+  transform: translateY(1px);
+}
+
+.home-card-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--form);
+}
+
+.home-card h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.home-card p {
+  font-size: 15px;
+  color: var(--pencil);
+  margin: 0;
+}
+
 /* ---------------------------------------------------------------- welcome */
 .welcome {
   flex: 1;
