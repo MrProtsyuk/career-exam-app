@@ -2,26 +2,13 @@ import { CAREERS } from "../data/careers.js";
 import { DIMENSIONS } from "../data/dimensions.js";
 import { FORM_QUOTAS } from "../engine/form.js";
 
-// Read off the same sources the exam does, so the spec band can never drift
-// from what a sitting actually contains.
+// Read off the same sources the exam does, so the copy can never drift from
+// what a sitting actually contains.
 const FORM_SIZE = Object.values(FORM_QUOTAS).reduce((s, n) => s + n, 0);
 
 export default function Home({ onTakeExam, onViewCareers }) {
   return (
     <main className="home">
-      <div className="spec-band">
-        <span>
-          <b>{FORM_SIZE}</b> items
-        </span>
-        <span>
-          <b>{DIMENSIONS.length}</b> trait dimensions
-        </span>
-        <span>
-          <b>{CAREERS.length}</b> careers
-        </span>
-        <span>No account. Nothing saved.</span>
-      </div>
-
       <div className="home-hero">
         <h1>
           Career <em>Discovery</em>

@@ -138,34 +138,6 @@ a:focus-visible {
   padding-bottom: 56px;
 }
 
-/* Instrument spec band: reads as a form header and states the terms up front. */
-.spec-band {
-  display: flex;
-  flex-wrap: wrap;
-  border-bottom: 1px solid var(--rule);
-  background: var(--paper-raised);
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--pencil);
-}
-
-.spec-band span {
-  padding: 11px 24px;
-  border-right: 1px solid var(--rule);
-}
-
-.spec-band span:last-child {
-  border-right: none;
-  color: var(--form);
-}
-
-.spec-band b {
-  color: var(--ink);
-  font-weight: 600;
-}
-
 .home-hero {
   flex: 1;
   display: grid;
@@ -307,10 +279,6 @@ a:focus-visible {
   .home-options {
     grid-template-columns: 1fr;
     padding: 0 22px;
-  }
-
-  .spec-band span {
-    padding: 9px 16px;
   }
 }
 
