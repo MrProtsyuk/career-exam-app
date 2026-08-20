@@ -171,11 +171,6 @@ a:focus-visible {
   border-left: 2px solid var(--form-line);
 }
 
-.home-lede b {
-  font-weight: 400;
-  color: var(--form);
-}
-
 /* Two entry panels, deliberately unequal: one of them is the primary act. */
 .home-options {
   display: grid;
