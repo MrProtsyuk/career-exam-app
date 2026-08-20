@@ -140,11 +140,11 @@ a:focus-visible {
 
 .home-hero {
   flex: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
-  gap: 0 48px;
-  align-items: end;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
   padding: 72px 44px 56px;
 }
 
@@ -166,9 +166,8 @@ a:focus-visible {
 .home-lede {
   font-size: 19px;
   line-height: 1.55;
-  margin: 0 0 10px;
-  padding-left: 26px;
-  border-left: 2px solid var(--form-line);
+  max-width: 52ch;
+  margin: 0;
 }
 
 /* Two entry panels, deliberately unequal: one of them is the primary act. */
@@ -257,13 +256,6 @@ a:focus-visible {
 .home-card.secondary:hover {
   box-shadow: var(--lift-2);
   border-color: var(--form-line);
-}
-
-@media (max-width: 900px) {
-  .home-hero {
-    grid-template-columns: 1fr;
-    gap: 30px 0;
-  }
 }
 
 @media (max-width: 640px) {
