@@ -107,6 +107,23 @@ a:focus-visible {
   color: var(--ink);
 }
 
+/* --------------------------------------------------------------- colophon */
+.colophon {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  padding: 18px 28px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pencil);
+}
+
 /* ------------------------------------------------------------------- home */
 .home-options {
   display: grid;

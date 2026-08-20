@@ -8,6 +8,7 @@ import CareerPaths from "./components/CareerPaths.jsx";
 import Exam from "./components/Exam.jsx";
 import Results from "./components/Results.jsx";
 import NoResults from "./components/NoResults.jsx";
+import Footer from "./components/Footer.jsx";
 
 export const FORM_SIZE = Object.values(FORM_QUOTAS).reduce((s, n) => s + n, 0);
 
@@ -73,6 +74,7 @@ export default function App() {
         ) : (
           <NoResults onStart={() => setScreen("welcome")} />
         ))}
+      {screen !== "exam" && <Footer />}
     </>
   );
 }
