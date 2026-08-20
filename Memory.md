@@ -95,5 +95,5 @@ npm run build   # single-file production build at dist/index.html
   ("Sound Stage") — pick another port for dev servers.
 - Playwright MCP screenshots land in the repo root; delete after use
   (`.playwright-mcp/` is gitignored).
-- Nothing is committed yet — the repo has no commits; commit only when
-  asked.
+- Work is committed on `main`; PR #1 (`ui-updates`) is merged. Commit only
+  when asked.
