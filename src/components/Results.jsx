@@ -107,7 +107,7 @@ function driverSentence(drivers) {
 function buildReportText(userVec, ranked, questionCount) {
   const lines = [];
   lines.push('CAREER DISCOVERY — SCORE REPORT');
-  lines.push(`Form CD-${questionCount} · ${new Date().toLocaleDateString()}`);
+  lines.push(`${questionCount} items · ${new Date().toLocaleDateString()}`);
   lines.push('');
   lines.push('TRAIT PROFILE (0–100)');
   for (const d of DIMENSIONS) {
@@ -174,7 +174,7 @@ export default function Results({ questions, careers, answers, onRetake }) {
       <div className="report-head">
         <div>
           <span className="report-code">
-            Score report · Form CD-{questions.length} ·{' '}
+            Score report · {questions.length} items ·{' '}
             {new Date().toLocaleDateString()}
           </span>
           <h1>Your career profile</h1>

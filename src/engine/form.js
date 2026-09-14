@@ -7,13 +7,13 @@ import { CATEGORIES } from '../data/questions.js';
 import { DIMENSIONS } from '../data/dimensions.js';
 import { attainableRange } from './scoring.js';
 
-/** Items administered per category; totals the classic 36-item form. */
+/** Items administered per category; totals a 50-item form. */
 export const FORM_QUOTAS = {
-  academic: 8,
-  values: 7,
-  hobbies: 7,
-  personality: 7,
-  workstyle: 7,
+  academic: 10,
+  values: 10,
+  hobbies: 10,
+  personality: 10,
+  workstyle: 10,
 };
 
 /**

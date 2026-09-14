@@ -8,7 +8,7 @@ _Last updated: 2026-08-19_
 ## What this is
 
 A self-contained career-discovery web app. Each sitting administers a
-36-item multiple-choice form drawn from a 100-question bank, builds a
+50-item multiple-choice form drawn from a 150-question bank, builds a
 10-trait profile from the answers, and ranks 63 built-in careers by
 statistical similarity — entirely client-side, no backend, no AI, no
 network calls, no localStorage (in-memory state only, by design).
@@ -30,8 +30,8 @@ npm run build   # single-file production build at dist/index.html
 - `src/engine/scoring.js` — the math: attainable-range normalization,
   cosine similarity, Pearson profile correlation, ranking, trait-driver
   extraction. Formulas documented in comments.
-- `src/engine/form.js` — per-session exam assembly: samples 8 academic +
-  7 each of values/hobbies/personality/workstyle from the bank, randomizes
+- `src/engine/form.js` — per-session exam assembly: samples 10 questions
+  from each of the five categories, randomizes
   question order within category blocks, Fisher–Yates-shuffles each
   question's options. `mulberry32` PRNG makes forms seedable in tests.
 - `src/data/dimensions.js` — the 10-dimension trait space: RIASEC
@@ -63,7 +63,7 @@ npm run build   # single-file production build at dist/index.html
   the "driven by" framing even when correct relative to the user's mean).
 - **Form sampling guarantees measurability**: `buildForm` re-samples
   (bounded) if a draw would leave any dimension immovable.
-- **Design language: psychometric instrument** ("Form CD-36") — scantron
+- **Design language: psychometric instrument** — scantron
   strip, Avenir/Charter/mono system-font trio, scan-paper palette, form
   green `#2e7d6e`, grading-pen red `#c93a2b` reserved for scores. All
   fonts are system fonts to keep the single-file build offline-capable.

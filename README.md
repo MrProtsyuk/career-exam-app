@@ -1,8 +1,8 @@
-# Career Discovery — Form CD-36
+# Career Discovery
 
 A self-contained web app that helps you figure out which career fits you.
-Each sitting administers a 36-item multiple-choice form — drawn fresh from
-a 100-question bank (academic interests, values, hobbies, personality,
+Each sitting administers a 50-item multiple-choice form — drawn fresh from
+a 150-question bank (academic interests, values, hobbies, personality,
 work style) with answer options shuffled per question — and matches your
 answers against 63 built-in careers using deterministic statistics — no
 LLM, no backend, no network calls.
@@ -22,7 +22,7 @@ double-click it and take the assessment fully offline.
 ## How the matching works
 
 0. Each session, [src/engine/form.js](src/engine/form.js) samples a form
-   from the bank (8 academic + 7 from each other category), randomizes
+   from the bank (10 from each of the five categories), randomizes
    question order within categories, and shuffles each question's options —
    weights travel with their options, so scoring is unaffected. A bounded
    re-sample guarantees every trait dimension stays measurable.
